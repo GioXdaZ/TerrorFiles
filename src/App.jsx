@@ -1,7 +1,27 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import { Carousel } from "./components/Carousel";
+import { Cards } from "./components/Cards";
 
-function App() {
+const ID = "8225677";
+const API_KEY = "1a2644403297434cb2dc83599303398d";
+
+const API_URL = `https://api.themoviedb.org/4/list/${ID}?api_key=${API_KEY}&query
+`;
+console.log(API_URL);
+
+const App = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setMovies(data.results);
+      });
+  }, []);
+
   return (
     <div className="body bg-slate-900">
       <div className="navbar bg-base-100 fixed z-10">
@@ -10,130 +30,17 @@ function App() {
         </div>
       </div>
 
-      <Carousel></Carousel>
+      <Carousel />
 
-      <div className="middle-body p-2 mt-8">
-        <div className="card card-side bg-base-100 shadow-xl">
-          <figure>
-            <img src="https://placeimg.com/200/280/arch" alt="Movie" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">New movie is released!</h2>
-            <p>Click the button to watch on Jetflix app.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card card-side bg-base-100 shadow-xl">
-          <figure>
-            <img src="https://placeimg.com/200/280/arch" alt="Movie" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">New movie is released!</h2>
-            <p>Click the button to watch on Jetflix app.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card card-side bg-base-100 shadow-xl">
-          <figure>
-            <img src="https://placeimg.com/200/280/arch" alt="Movie" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">New movie is released!</h2>
-            <p>Click the button to watch on Jetflix app.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card card-side bg-base-100 shadow-xl">
-          <figure>
-            <img src="https://placeimg.com/200/280/arch" alt="Movie" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">New movie is released!</h2>
-            <p>Click the button to watch on Jetflix app.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card card-side bg-base-100 shadow-xl">
-          <figure>
-            <img src="https://placeimg.com/200/280/arch" alt="Movie" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">New movie is released!</h2>
-            <p>Click the button to watch on Jetflix app.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card card-side bg-base-100 shadow-xl">
-          <figure>
-            <img src="https://placeimg.com/200/280/arch" alt="Movie" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">New movie is released!</h2>
-            <p>Click the button to watch on Jetflix app.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card card-side bg-base-100 shadow-xl">
-          <figure>
-            <img src="https://placeimg.com/200/280/arch" alt="Movie" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">New movie is released!</h2>
-            <p>Click the button to watch on Jetflix app.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card card-side bg-base-100 shadow-xl">
-          <figure>
-            <img src="https://placeimg.com/200/280/arch" alt="Movie" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">New movie is released!</h2>
-            <p>Click the button to watch on Jetflix app.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card card-side bg-base-100 shadow-xl">
-          <figure>
-            <img src="https://placeimg.com/200/280/arch" alt="Movie" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">New movie is released!</h2>
-            <p>Click the button to watch on Jetflix app.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
-            </div>
-          </div>
-        </div>
+      <div className="middle-body">
+        {movies.map((movieReq) => (
+          <Cards key={movieReq.id} {...movieReq} />
+        ))}
       </div>
 
       <div className="footer-body text-center">Copyright by GioXdaZ© 2022</div>
     </div>
   );
-}
+};
 
 export default App;
