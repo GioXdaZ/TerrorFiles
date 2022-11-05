@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import { PagesMovies } from "./PagesMovies";
 
 const API_IMG = "https://image.tmdb.org/t/p/w500";
 
@@ -8,6 +9,7 @@ export const Cards = ({
   poster_path,
   release_date,
   overview,
+  id,
 }) => {
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
@@ -19,10 +21,7 @@ export const Cards = ({
         <p>{overview}</p>
         <p>{release_date}</p>
         <div className="card-actions justify-end">
-          <button
-            htmlFor="my-modal"
-            className="btn bg-red-900 hover:bg-red-600"
-          >
+          <button id={id} className="btn bg-red-900 hover:bg-red-600">
             Watch
           </button>
         </div>

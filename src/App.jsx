@@ -6,9 +6,8 @@ import { Cards } from "./components/Cards";
 const ID = "8225677";
 const API_KEY = "1a2644403297434cb2dc83599303398d";
 
-const API_URL = `https://api.themoviedb.org/4/list/${ID}?api_key=${API_KEY}&query
+const API_URL = `https://api.themoviedb.org/3/list/${ID}?api_key=${API_KEY}&query
 `;
-console.log(API_URL);
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -17,8 +16,7 @@ const App = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setMovies(data.results);
+        setMovies(data.items);
       });
   }, []);
 
