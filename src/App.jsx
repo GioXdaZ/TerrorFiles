@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { Carousel } from "./components/Carousel";
 import { Cards } from "./components/Cards";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 const ID = "8225677";
 const API_KEY = "1a2644403297434cb2dc83599303398d";
@@ -22,11 +24,7 @@ const App = () => {
 
   return (
     <div className="body bg-slate-900">
-      <div className="navbar bg-base-100 fixed z-10">
-        <div className="flex-1 justify-center">
-          <a className="normal-case text-xl">TerrorFiles</a>
-        </div>
-      </div>
+      <Navbar />
 
       <Carousel />
 
@@ -35,8 +33,7 @@ const App = () => {
           <Cards key={movieReq.id} {...movieReq} />
         ))}
       </div>
-
-      <div className="footer-body text-center">Copyright by GioXdaZ© 2022</div>
+      <Footer></Footer>
     </div>
   );
 };

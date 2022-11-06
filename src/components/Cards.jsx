@@ -24,7 +24,7 @@ export const Cards = ({
             id={id}
             className="btn bg-red-900 hover:bg-red-600"
           >
-            Watch
+            INFO
           </Link>
         </div>
       </div>
