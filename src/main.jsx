@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: `/:id`,
+    path: `/movie/:id`,
     element: <PagesMovies />,
   },
 ]);

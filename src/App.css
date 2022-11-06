@@ -5,9 +5,13 @@
 }
 
 .middle-body>* {
-  flex: 1 1 450px;
+  flex: 1 1 300px;
 }
 
 .img {
-  height: 750px;
+  height: 445px;
+}
+
+.poster-image {
+  transform: scale(0.5);
 }
