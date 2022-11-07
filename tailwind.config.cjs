@@ -2,6 +2,7 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,jsx,}"],
   theme: {
+    screens: { mobile: { max: "850px" } },
     extend: {},
   },
   plugins: [require("daisyui")],

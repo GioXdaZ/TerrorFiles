@@ -1,7 +1,7 @@
 .item {
   min-height: 10rem;
-  min-width: 60rem;
-  padding: 40px;
+  min-width: 380px;
+  padding: 2px;
 }
 
 .item img {
@@ -13,7 +13,8 @@
 
 .inner-carousel {
   display: flex;
-  margin-top: 50px;
+  margin-top: 70px;
+  margin-bottom: 8px;
 }
 
 .carousel {
