@@ -17,12 +17,12 @@ export const Cards = ({
         <img src={API_IMG + poster_path} className="img mt-4 rounded-xl" />
       </figure>
       <div className="card-body flex flex-col justify-between items-center">
-        <h1 className="card-title text-center">{original_title}</h1>
+        <h1 className="card-title text-white text-center">{original_title}</h1>
         <div className="card-actions">
           <Link
             to={`/movie/${id}`}
             id={id}
-            className="btn bg-red-900 hover:bg-red-600"
+            className="btn text-white bg-red-900 hover:bg-red-600"
           >
             INFO
           </Link>

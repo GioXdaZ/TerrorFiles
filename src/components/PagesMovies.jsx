@@ -33,9 +33,11 @@ export const PagesMovies = () => {
             className="poster-image rounded-2xl"
           />
           <div className="items-center text-justify mx-8">
-            <h1 className=" font-bold text-2xl px-2">{original_title}</h1>
-            <p className="text-end px-2">{release_date}</p>
-            <p className=" py-2 px-2">{overview}</p>
+            <h1 className="text-white font-bold text-2xl px-2">
+              {original_title}
+            </h1>
+            <p className="text-white text-end px-2">{release_date}</p>
+            <p className="text-white py-2 px-2">{overview}</p>
           </div>
         </div>
       </div>
