@@ -24,7 +24,10 @@ export const Carousel = () => {
       >
         {imgs.map((img) => {
           return (
-            <motion.div className="item" key={img}>
+            <motion.div
+              className="item flex justify-center items-center"
+              key={img}
+            >
               <img src={img} alt="" />
             </motion.div>
           );

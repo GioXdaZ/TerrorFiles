@@ -1,3 +1,15 @@
+body {
+  background-color: #0f1218;
+}
+
+.color {
+  background-color: #3e4a61;
+}
+
+.color-movies {
+  background-color: #1a212e;
+}
+
 .middle-body {
   display: flex;
   flex-wrap: wrap;

@@ -23,7 +23,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="body bg-slate-900">
+    <div>
       <Navbar />
 
       <Carousel />

@@ -12,7 +12,7 @@ export const Cards = ({
   id,
 }) => {
   return (
-    <div className="card card-compact bg-base-100 shadow-xl">
+    <div className="card card-compact color shadow-xl">
       <figure>
         <img src={API_IMG + poster_path} className="img mt-4 rounded-xl" />
       </figure>

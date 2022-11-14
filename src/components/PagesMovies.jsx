@@ -27,7 +27,7 @@ export const PagesMovies = () => {
     <div>
       <Navbar />
       <div className="flex flex-row mt-0 mobile:flex mobile:flex-col">
-        <div className="bg-base-300 shadow-xl flex flex-row mobile:flex mobile:flex-col justify-center items-center px-4 py-0">
+        <div className="color-movies shadow-xl flex flex-row mobile:flex mobile:flex-col justify-center items-center px-4 py-0">
           <img
             src={API_IMG + poster_path}
             className="poster-image rounded-2xl"
@@ -39,7 +39,7 @@ export const PagesMovies = () => {
           </div>
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };
